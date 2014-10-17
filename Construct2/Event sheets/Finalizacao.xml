@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Finalizacao</name>
+    <events>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">zoom</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="txtOracao">
+                    <param id="0" name="Pin to">imgBackground</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="imgBoca">
+                    <param id="0" name="Pin to">imgProfessor2</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="imgProfessor2">
+                    <param id="0" name="Pin to">imgBackground</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-17" name="Set scale" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Scale">zoom</param>
+                </action>
+                <action id="-17" name="Set scale" type="System">
+                    <param id="0" name="Layer">&quot;layProf&quot;</param>
+                    <param id="1" name="Scale">zoom</param>
+                </action>
+                <action id="-17" name="Set scale" type="System">
+                    <param id="0" name="Layer">&quot;layLousa&quot;</param>
+                    <param id="1" name="Scale">zoom</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">Opc</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-12" name="Set group active" type="System">
+                    <param id="0" name="Group name">&quot;FadeIn&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" title="Efeitos">
+            <sub-events>
+                <event-group collapsed="1" description="" title="Zoom">
+                    <sub-events>
+                        <event-group description="" inactive="1" title="zoomin">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" type="System">
+                                            <param id="0" name="Interval (seconds)">0.01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" type="System">
+                                            <param id="0" name="Variable">zoom</param>
+                                            <param id="1" name="Value">0.01</param>
+                                        </action>
+                                        <action id="-17" name="Set scale" type="System">
+                                            <param id="0" name="Layer">0</param>
+                                            <param id="1" name="Scale">zoom</param>
+                                        </action>
+                                        <action id="-17" name="Set scale" type="System">
+                                            <param id="0" name="Layer">&quot;layLousa&quot;</param>
+                                            <param id="1" name="Scale">zoom</param>
+                                        </action>
+                                        <action id="-17" name="Set scale" type="System">
+                                            <param id="0" name="Layer">&quot;layProf&quot;</param>
+                                            <param id="1" name="Scale">zoom</param>
+                                        </action>
+                                        <action id="-1" name="Set X" type="imgBackground">
+                                            <param id="0" name="X">imgBackground.X + 2</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" type="imgBackground">
+                                            <param id="0" name="Y">imgBackground.Y + 1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">zoom</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">1.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" type="System">
+                                            <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                        <action id="-4" name="Set visible" type="System">
+                                            <param id="0" name="Layer">&quot;layLousa&quot;</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="1" name="Start fade" type="txtOpcao" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" inactive="1" title="zoomout">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" type="System">
+                                            <param id="0" name="Interval (seconds)">0.01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" type="System">
+                                            <param id="0" name="Variable">zoom</param>
+                                            <param id="1" name="Value">0.01</param>
+                                        </action>
+                                        <action id="-17" name="Set scale" type="System">
+                                            <param id="0" name="Layer">0</param>
+                                            <param id="1" name="Scale">zoom</param>
+                                        </action>
+                                        <action id="-17" name="Set scale" type="System">
+                                            <param id="0" name="Layer">&quot;layLousa&quot;</param>
+                                            <param id="1" name="Scale">zoom</param>
+                                        </action>
+                                        <action id="-17" name="Set scale" type="System">
+                                            <param id="0" name="Layer">&quot;layProf&quot;</param>
+                                            <param id="1" name="Scale">zoom</param>
+                                        </action>
+                                        <action id="-1" name="Set X" type="imgBackground">
+                                            <param id="0" name="X">imgBackground.X -2</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" type="imgBackground">
+                                            <param id="0" name="Y">imgBackground.Y -1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">zoom</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0.8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" type="System">
+                                            <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="" inactive="1" title="FadeIn">
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" type="System">
+                                    <param id="0" name="Interval (seconds)">0.01</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">Opc</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" type="System">
+                                            <param id="0" name="Group name">&quot;FadeIn&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-22" name="Else" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" type="System">
+                                            <param id="0" name="Variable">Opc</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="-18" name="Set opacity" type="System">
+                                            <param id="0" name="Layer">&quot;layFade&quot;</param>
+                                            <param id="1" name="Opacity">Opc</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="Descreve a animacao da boca da personagem" inactive="1" title="AnimaFala">
+                    <sub-events>
+                        <variable comment="Recebe a letra que faz referencia a animacao atual" name="auxTxt" type="text"></variable>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-4" name="Set visible" type="System">
+                                    <param id="0" name="Layer">&quot;layTexto&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" type="System">
+                                    <param id="0" name="Interval (seconds)">TEMPO_ESCRITA</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">auxTxt</param>
+                                    <param id="1" name="Value">left(txtFala, 1)</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">right(txtFala, len(txtFala) -1)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">auxTxt</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" type="imgBoca">
+                                            <param id="0" name="Animation">lowerCase(auxTxt)</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="1" name="Append text" type="txtLegenda">
+                                            <param id="0" name="Text">auxTxt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-22" name="Else" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" type="System">
+                                            <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" type="imgBoca">
+                                            <param id="0" name="Animation">&quot;default&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" type="System">
+                                            <param id="0" name="Seconds">TEMPO_LEITURA</param>
+                                        </action>
+                                        <action id="-4" name="Set visible" type="System">
+                                            <param id="0" name="Layer">&quot;layTexto&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="" inactive="1" title="FadeOut">
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" type="System">
+                                    <param id="0" name="Interval (seconds)">0.01</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">Opc</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" type="System">
+                                            <param id="0" name="Group name">&quot;FadeOut&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-22" name="Else" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" type="System">
+                                            <param id="0" name="Variable">inputFlag</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="-18" name="Set opacity" type="System">
+                                            <param id="0" name="Layer">&quot;layFade&quot;</param>
+                                            <param id="1" name="Opacity">Opc</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" title="Fala">
+            <sub-events>
+                <event-block>
+                    <conditions />
+                    <actions>
+                        <action id="-12" name="Set group active" type="System">
+                            <param id="0" name="Group name">&quot;Fala&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">txtFala</param>
+                            <param id="1" name="Value">&quot;Chegamos ao ponto final do texto que escrevi para você. Ele agora se apresenta em sua totalidade, como uma unidade de sentido. Está estruturado para transmitir a mensagem que eu queria.&quot;</param>
+                        </action>
+                        <action id="-12" name="Set group active" type="System">
+                            <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                        </action>
+                        <action id="0" name="Set text" type="txtLegenda">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">txtFala</param>
+                            <param id="1" name="Value">&quot;Sabemos que ele pode significar qualquer coisa, que cada indivíduo pode interpretálo da forma que desejar.&quot;</param>
+                        </action>
+                        <action id="-12" name="Set group active" type="System">
+                            <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                        </action>
+                        <action id="0" name="Set text" type="txtLegenda">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">txtFala</param>
+                            <param id="1" name="Value">&quot;O importante é saber que os articuladores me ajudaram a dizer aquilo que queria dizer. Sua função está aí: em ajudar na comunicação e difusão de ideias.&quot;</param>
+                        </action>
+                        <action id="-12" name="Set group active" type="System">
+                            <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                        </action>
+                        <action id="0" name="Set text" type="txtLegenda">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="-12" name="Set group active" type="System">
+                            <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">TEMPO_LEITURA</param>
+                        </action>
+                        <action id="-2" name="Go to layout" type="System">
+                            <param id="0" name="Layout">Creditos</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" inactive="1" title="ControleMouse">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="6" name="On object clicked" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">txtOpcao</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" type="System">
+                            <param id="0" name="Group name">&quot;ControleMouse&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="4" name="Set font color" type="txtOpcao">
+                            <param id="0" name="Color">rgb(68, 68, 68)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group collapsed="1" description="" title="AtribCSS">
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" type="Mouse">
+                                    <param id="0" name="Object">txtOpcao</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" type="Mouse">
+                                    <param id="0" name="Cursor style">1</param>
+                                </action>
+                                <action id="4" name="Set font color" type="txtOpcao">
+                                    <param id="0" name="Color">rgb(255, 140, 140)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-22" name="Else" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                                <action id="4" name="Set font color" type="txtOpcao">
+                                    <param id="0" name="Color">rgb(68, 68, 68)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

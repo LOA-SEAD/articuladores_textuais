@@ -1,0 +1,1216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Perguntas</name>
+    <events>
+        <variable name="TEMPO_LEITURA" type="number">2</variable>
+        <variable name="TEMPO_ESCRITA" type="number">0.05</variable>
+        <variable name="zoom" type="number">0.8</variable>
+        <variable name="NumErros" type="number">0</variable>
+        <variable name="PergAtual" type="number">1</variable>
+        <variable comment="Recebe o texto a ser animado pela fala da personagem" name="txtFala" type="text"></variable>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" type="txtOpcao">
+                    <param id="0" name="Pin to">imgBackground</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="txtOracao">
+                    <param id="0" name="Pin to">imgBackground</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="imgProfessor">
+                    <param id="0" name="Pin to">imgBackground</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" type="imgBoca">
+                    <param id="0" name="Pin to">imgProfessor</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-17" name="Set scale" type="System">
+                    <param id="0" name="Layer">&quot;layBg&quot;</param>
+                    <param id="1" name="Scale">zoom</param>
+                </action>
+                <action id="7" name="Play (by name)" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">&quot;sndTesteFundo&quot;</param>
+                    <param id="3" name="Loop">1</param>
+                    <param id="2" name="Tag (optional)">&quot;sndTesteFundo&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">Opc</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-12" name="Set group active" type="System">
+                    <param id="0" name="Group name">&quot;FadeIn&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group collapsed="1" description="" title="Perguntas">
+            <sub-events>
+                <event-group collapsed="1" description="" title="Pergunta1">
+                    <sub-events>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;Pergunta1&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Para iniciar, apresento os articuladores&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Cada um deles traz um valor sintático específico, que promove a ligação entre as sentenças. Quando bem utilizados, estruturam o texto de forma coesa e coerente. Vejamos a primeira oração do texto...&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;&apos; [.....................], devemos deixar claro que o texto não é um bicho de sete cabeças.&apos;&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot; Vendo essa lacuna e os articuladores que disponibilizei para você, qual deles poderia preenchê-la? Essa primeira etapa exige atenção aos detalhes.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Primeiro leia a oração e olhe atentamente para cada articulador. Você pode chutar, não tem problema. Mas todo o texto para ser texto, para significar, precisa necessariamente de nossa percepção.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;ControleMouse&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="" inactive="1" title="Pergunta2">
+                    <sub-events>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;Pergunta2&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;O que esse exercício exigiu de você foi sua percepção, seu conhecimento de mundo e de linguagem e seu bom-senso. Não se esqueça, para escrever nos valemos sempre desses três itens.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Pois muito bem, a partir de agora eu darei a sentença e o valor sintático do articulador que deverá preencher a lacuna.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;Em primeiro lugar, devemos deixar claro que o texto não é um bicho de sete cabeças. [............], é necessário treinar bastante para produzi-lo de forma coesa e coerente.&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_LEITURA *2</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Nesta lacuna, a articulação sintática é de oposição, tal como estes articuladores: mas, porém, todavia, entretanto, no entanto.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;ControleMouse&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="" inactive="1" title="Pergunta3">
+                    <sub-events>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;Pergunta3&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Veja o texto preenchido com os dois primeiros articuladores e a proxima oracao com sua respectiva lacuna a ser preenchida.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;Em primeiro lugar, devemos deixar claro que o texto não é um bicho de sete cabeças. Contudo, é necessário treinar bastante para produzi-lo de forma coesa e coerente. [..............], para escrever é preciso ler,&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_LEITURA *3</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Nesta lacuna  a articulacao sintatica e de adicao  de continuacao  tal como os seguintes articuladores  ademais  outrossim  ainda mais  ainda por cima  por outro lado  tambem  e  nem  nao so    mas tambem  &quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;ControleMouse&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="" inactive="1" title="Pergunta4">
+                    <sub-events>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;Pergunta4&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Vamos em frente  estamos quase na metade do texto. Vejamos a    proxima oracao que precisa ser completada.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Pois muito bem, a partir de agora eu darei a sentença e o valor sintático do articulador que deverá preencher a lacuna.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;Em primeiro lugar, devemos deixar claro que o texto não é um bicho de sete cabeças. Contudo, é necessário treinar bastante para produzi-lo de forma coesa e coerente. &#x0D;&#x0A;Além disso, para escrever é preciso ler, [.....], para transmitir conhecimento é imprescindível, antes de qualquer coisa, conhecer sobre aquilo que vai dizer.&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_LEITURA *3</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Nesta lacuna, temos uma expressao linguistica que introduz parafrase, como isto e, quer dizer, ou melhor, em outras palavras&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value"> &quot;Antes de responder, busque ler o texto, perceber seu encadeamento, sua progressão&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;ControleMouse&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Isso ajudara voce entender que o texto e uma unidade de sentido. Que tudo esta interligado&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;ControleMouse&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="" inactive="1" title="Pergunta5">
+                    <sub-events>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;Pergunta5&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Nessa altura, você já tem grande parte do texto, consegue visualizá-lo em quase sua totalidade. Faltam apenas dois articuladores. Veja como está estruturada a penúltima oração:&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;Em primeiro lugar, devemos deixar claro que o texto não é um bicho de sete cabeças. Contudo, é necessário treinar bastante para produzi-lo de forma coesa e coerente. Além disso, para escrever é preciso ler, ou seja, para transmitir conhecimento é imprescindível, antes de qualquer coisa, conhecer sobre aquilo que vai dizer. É isso aí, [.........]  leia, vai construir um texto sem grandes funcionalidades.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_LEITURA *3</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Nesta lacuna, a articulação sintática é de condição, tal como os seguintes articuladores: se, caso, contanto que, desde que, a não ser que.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Isso ajudara voce entender que o texto e uma unidade de sentido. Que tudo esta interligado&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;ControleMouse&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" inactive="1" title="Pergunta6">
+                    <sub-events>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;Pergunta6&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;Em primeiro lugar, devemos deixar claro que o texto não é um bicho de sete cabeças. Contudo, é necessário treinar bastante para produzi-lo de forma coesa e coerente. Além disso, para escrever é preciso ler, ou seja, para transmitir conhecimento é imprescindível, antes de qualquer coisa, conhecer sobre aquilo que vai dizer. É isso aí, a menos que leia, vai construir um texto sem grandes funcionalidades. Logo, o ato de escrever está indissociavelmente ligado ao ato de ler.&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Enfim, o último articulador que fecha o texto é LOGO. Sua função é a de conclusão, como os demais termos que se seguem: portanto, então, assim, por isso, por conseguinte, de modo que, em vista disso, em suma, em síntese, em conclusão, em resumo, enfim.&quot;</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_LEITURA *3</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-2" name="Go to layout" type="System">
+                                    <param id="0" name="Layout">Finalizacao</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" title="ProcResposta">
+            <sub-events>
+                <event-group description="Informa acerto e pula para próxima pergunta" inactive="1" title="MensAcerto">
+                    <sub-events>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;MensAcerto&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="4" name="Set animation" type="imgBoca">
+                                    <param id="0" name="Animation">&quot;Feliz&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set cursor style" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Muito bem! Você acertou! O primeiro articulador é &apos; Em primeiro lugar &apos;.&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;Em primeiro lugar, devemos deixar claro que o texto não é um bicho de sete cabeças.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Muito bem! É isso aí, o articulador que completa é &apos; CONTUDO &apos;, que possui valor adversativo.&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;Em primeiro lugar, devemos deixar claro que o texto não é um bicho de sete cabeças. Contudo, é necessário treinar bastante para produzi-lo de forma coesa e coerente.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Muito bem! É isso aí, o articulador que completa é &apos;ALÉM DISSO&apos;, que possui valor de adição, de continuação.&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;Em primeiro lugar, devemos deixar claro que o texto não é um bicho de sete cabeças. Contudo, é necessário treinar bastante para produzi-lo de forma coesa e coerente. Além disso, para escrever é preciso ler,&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Muito bem! Você acertou! O articulador que completa é o &apos;OU SEJA&apos;&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;Em primeiro lugar, devemos deixar claro que o texto não é um bicho de sete cabeças. Contudo, é necessário treinar bastante para produzi-lo de forma coesa e coerente. Além disso, para escrever é preciso ler, ou seja, para transmitir conhecimento é imprescindível, antes de qualquer coisa, conhecer sobre aquilo que vai dizer.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;É isso aí, você completou com o articulador &apos;A MENOS QUE&apos;, indicando condição.&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtOracao">
+                                    <param id="0" name="Text">&quot;Em primeiro lugar, devemos deixar claro que o texto não é um bicho de sete cabeças. Contudo, é necessário treinar bastante para produzi-lo de forma coesa e coerente. Além disso, para escrever é preciso ler, ou seja, para transmitir conhecimento é imprescindível, antes de qualquer coisa, conhecer sobre aquilo que vai dizer. É isso aí, a menos que leia, vai construir um texto sem grandes funcionalidades.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;Pergunta&quot;&amp;PergAtual</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="Informa erro, incrementa número de erros e volta à mesma pergunta" inactive="1" title="MensErro">
+                    <sub-events>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;MensErro&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="4" name="Set animation" type="imgBoca">
+                                    <param id="0" name="Animation">&quot;Desapontado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set cursor style" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">NumErros</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="0" name="Set text" type="txtLegenda">
+                                    <param id="0" name="Text">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Será mesmo esta a melhor opção para se iniciar o texto? Pense mais um pouco e tente novamente!&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Olhe mais uma vez. Veja se essa escolha está de acordo com os outros exemplos que citei anteriormente no que se refere à questão de oposição e tente de novo.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Sera mesmo que esse articulador pode ser usado com a função de adição  Pense bem e tente outra vez &quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Hum, tem certeza? Veja se esse articulador dá sentido ao texto.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">&quot;Atenção para um ponto aqui: não podemos esquecer que esses articuladores, apesar de terem o mesmo valor sintático, nem sempre podem assumir o mesmo lugar na oração.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">TEMPO_ESCRITA * len(txtFala) + TEMPO_LEITURA</param>
+                                </action>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;ControleMouse&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" inactive="1" title="ControleMouse">
+            <sub-events>
+                <variable name="RespCorreta" type="number">0</variable>
+                <event-block>
+                    <conditions>
+                        <condition id="6" name="On object clicked" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">txtOpcao</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" type="System">
+                            <param id="0" name="Group name">&quot;Pergunta&quot;&amp;PergAtual</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" type="System">
+                            <param id="0" name="Group name">&quot;ControleMouse&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="4" name="Set font color" type="txtOpcao">
+                            <param id="0" name="Color">rgb(68, 68, 68)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" type="System">
+                                    <param id="0" name="First value">txtOpcao.IID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;MensAcerto&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">RespCorreta</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" type="System">
+                                    <param id="0" name="First value">txtOpcao.IID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;MensAcerto&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">RespCorreta</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" type="System">
+                                    <param id="0" name="First value">txtOpcao.IID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;MensAcerto&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">RespCorreta</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" type="System">
+                                    <param id="0" name="First value">txtOpcao.IID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;MensAcerto&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">RespCorreta</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">PergAtual</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" type="System">
+                                    <param id="0" name="First value">txtOpcao.IID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;MensAcerto&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">RespCorreta</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-8" name="Compare two values" type="System">
+                                    <param id="0" name="First value">RespCorreta</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" type="System">
+                                    <param id="0" name="Group name">&quot;MensErro&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group collapsed="1" description="" title="AtribCSS">
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" type="Mouse">
+                                    <param id="0" name="Object">txtOpcao</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" type="Mouse">
+                                    <param id="0" name="Cursor style">1</param>
+                                </action>
+                                <action id="4" name="Set font color" type="txtOpcao">
+                                    <param id="0" name="Color">rgb(255, 140, 140)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-22" name="Else" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                                <action id="4" name="Set font color" type="txtOpcao">
+                                    <param id="0" name="Color">rgb(68, 68, 68)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" title="Efeitos">
+            <sub-events>
+                <event-group description="" title="Zoom">
+                    <sub-events>
+                        <event-group collapsed="1" description="" inactive="1" title="zoomin">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" type="System">
+                                            <param id="0" name="Interval (seconds)">0.01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" type="System">
+                                            <param id="0" name="Variable">zoom</param>
+                                            <param id="1" name="Value">0.01</param>
+                                        </action>
+                                        <action id="-17" name="Set scale" type="System">
+                                            <param id="0" name="Layer">0</param>
+                                            <param id="1" name="Scale">zoom</param>
+                                        </action>
+                                        <action id="-17" name="Set scale" type="System">
+                                            <param id="0" name="Layer">&quot;layLousa&quot;</param>
+                                            <param id="1" name="Scale">zoom</param>
+                                        </action>
+                                        <action id="-1" name="Set X" type="imgBackground">
+                                            <param id="0" name="X">imgBackground.X + 2</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" type="imgBackground">
+                                            <param id="0" name="Y">imgBackground.Y + 1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">zoom</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">1.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" type="System">
+                                            <param id="0" name="Group name">&quot;zoomin&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                        <action id="-4" name="Set visible" type="System">
+                                            <param id="0" name="Layer">&quot;layLousa&quot;</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="1" name="Start fade" type="txtOpcao" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group collapsed="1" description="" inactive="1" title="zoomout">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" type="System">
+                                            <param id="0" name="Interval (seconds)">0.01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" type="System">
+                                            <param id="0" name="Variable">zoom</param>
+                                            <param id="1" name="Value">0.01</param>
+                                        </action>
+                                        <action id="-17" name="Set scale" type="System">
+                                            <param id="0" name="Layer">0</param>
+                                            <param id="1" name="Scale">zoom</param>
+                                        </action>
+                                        <action id="-17" name="Set scale" type="System">
+                                            <param id="0" name="Layer">&quot;layLousa&quot;</param>
+                                            <param id="1" name="Scale">zoom</param>
+                                        </action>
+                                        <action id="-1" name="Set X" type="imgBackground">
+                                            <param id="0" name="X">imgBackground.X -2</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" type="imgBackground">
+                                            <param id="0" name="Y">imgBackground.Y -1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">zoom</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0.8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" type="System">
+                                            <param id="0" name="Group name">&quot;zoomout&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group description="Descreve a animacao da boca da personagem" inactive="1" title="AnimaFala">
+                    <sub-events>
+                        <variable comment="Recebe a letra que faz referencia a animacao atual" name="auxTxt" type="text"></variable>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="-4" name="Set visible" type="System">
+                                    <param id="0" name="Layer">&quot;layTexto&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" type="System">
+                                    <param id="0" name="Interval (seconds)">TEMPO_ESCRITA</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">auxTxt</param>
+                                    <param id="1" name="Value">left(txtFala, 1)</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">txtFala</param>
+                                    <param id="1" name="Value">right(txtFala, len(txtFala) -1)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">auxTxt</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" type="imgBoca">
+                                            <param id="0" name="Animation">lowerCase(auxTxt)</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="1" name="Append text" type="txtLegenda">
+                                            <param id="0" name="Text">auxTxt</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-22" name="Else" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" type="System">
+                                            <param id="0" name="Group name">&quot;AnimaFala&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" type="imgBoca">
+                                            <param id="0" name="Animation">&quot;default&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" type="System">
+                                            <param id="0" name="Seconds">TEMPO_LEITURA</param>
+                                        </action>
+                                        <action id="0" name="Set text" type="txtLegenda">
+                                            <param id="0" name="Text">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-4" name="Set visible" type="System">
+                                            <param id="0" name="Layer">&quot;layTexto&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" inactive="1" title="FadeIn">
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" type="System">
+                                    <param id="0" name="Interval (seconds)">0.01</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">Opc</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Set group active" type="System">
+                                            <param id="0" name="Group name">&quot;FadeIn&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-22" name="Else" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" type="System">
+                                            <param id="0" name="Variable">Opc</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="-18" name="Set opacity" type="System">
+                                            <param id="0" name="Layer">&quot;layFade&quot;</param>
+                                            <param id="1" name="Opacity">Opc</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

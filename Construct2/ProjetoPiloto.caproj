@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>ProjetoPiloto</name>
+    <description></description>
+    <version>1.0</version>
+    <author></author>
+    <unique-id>1lukske8kv2cz</unique-id>
+    <saved-with-version>9500</saved-with-version>
+    <used-plugins>
+        <plugin id="Mouse" version="1">Mouse</plugin>
+        <plugin id="Sprite" version="1">Sprite</plugin>
+        <plugin id="Text" version="1">Text</plugin>
+        <plugin id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin id="Audio" version="1">Audio</plugin>
+        <plugin id="Keyboard" version="1">Keyboard</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior id="Fade" version="1">Fade</behavior>
+        <behavior id="Pin" version="1">Pin</behavior>
+    </used-behaviors>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>800</width>
+        <height>600</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <first-layout>Introducao</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Off</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Preview mode">HTTP</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">Yes</prop>
+    </configuration-settings>
+    <object-folder expanded="1">
+        <object-folder expanded="0" name="Imagens">
+            <object-folder expanded="0" name="Introducao">
+                <object-type name="Botao">
+                    <plugin id="Sprite" />
+                    <animation-folder expanded="1">
+                        <animation framecount="1" loop="1" name="Botao" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.0740741" y="0.25" />
+                                    <point x="0.5" y="0.1625" />
+                                    <point x="0.925926" y="0.25" />
+                                    <point x="0.933333" y="0.775" />
+                                    <point x="0.5" y="0.85" />
+                                    <point x="0.0740741" y="0.75" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Selecionado" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.0740741" y="0.25" />
+                                    <point x="0.5" y="0.1625" />
+                                    <point x="0.925926" y="0.25" />
+                                    <point x="0.933333" y="0.775" />
+                                    <point x="0.5" y="0.85" />
+                                    <point x="0.0740741" y="0.75" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Clicado" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.0740741" y="0.25" />
+                                    <point x="0.5" y="0.1625" />
+                                    <point x="0.925926" y="0.25" />
+                                    <point x="0.933333" y="0.775" />
+                                    <point x="0.5" y="0.85" />
+                                    <point x="0.0740741" y="0.75" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder expanded="0" name="Professor">
+                <object-type name="imgBoca">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder expanded="1">
+                        <animation framecount="1" loop="0" name="default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.505882" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Feliz" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.505882" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Desapontado" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.505882" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="a" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.505882" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="b" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.505882" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="c" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.505882" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="d" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.505882" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="e" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.505882" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="f" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.505882" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="g" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="h" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="i" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="j" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="k" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="l" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.505882" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="m" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="n" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="o" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="p" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="q" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="r" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="s" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="t" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="u" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="v" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="w" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="x" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="y" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="z" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="imgProfessor">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder expanded="1">
+                        <animation framecount="1" loop="0" name="default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="-0.00485437" hotspotY="0">
+                                <collision-poly>
+                                    <point x="0.131068" y="0.0576923" />
+                                    <point x="0.5" y="0.00641026" />
+                                    <point x="0.878641" y="0.0534188" />
+                                    <point x="0.966019" y="0.5" />
+                                    <point x="0.713592" y="0.873932" />
+                                    <point x="0.5" y="0.74359" />
+                                    <point x="0.334951" y="0.852564" />
+                                    <point x="0.0825243" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="imgProfessor2">
+                    <plugin id="TiledBg" />
+                    <behaviors>
+                        <behavior-type name="Pin">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture />
+                </object-type>
+            </object-folder>
+            <object-folder expanded="0" name="creditos">
+                <object-type name="Logos">
+                    <plugin id="Sprite" />
+                    <animation-folder expanded="1">
+                        <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.321875" y="0.429167" />
+                                    <point x="0.5" y="0.195833" />
+                                    <point x="0.584375" y="0.554167" />
+                                    <point x="0.557813" y="0.5" />
+                                    <point x="0.671875" y="0.5625" />
+                                    <point x="0.5" y="0.808333" />
+                                    <point x="0.415625" y="0.445833" />
+                                    <point x="0.298438" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-type name="Fundo">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="imgBackground">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="imgBalao">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+        </object-folder>
+        <object-folder expanded="0" name="Componentes">
+            <object-type name="Audio">
+                <plugin id="Audio" />
+            </object-type>
+            <object-type name="Keyboard">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="Mouse">
+                <plugin id="Mouse" />
+            </object-type>
+        </object-folder>
+        <object-folder expanded="0" name="Textos">
+            <object-type name="txtApresentam">
+                <plugin id="Text" />
+                <instance-variables>
+                    <instance-variable name="FadeFlag" type="number" />
+                </instance-variables>
+            </object-type>
+            <object-type name="txtOpcao">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                    <behavior-type name="Fade">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="txtLegenda">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtOracao">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="txtCreditos">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+    </object-folder>
+    <families />
+    <layout-folder expanded="1">
+        <layout-folder expanded="1" name="Animacoes">
+            <layout>Introducao.xml</layout>
+            <layout>MenuInicial.xml</layout>
+            <layout>Finalizacao.xml</layout>
+            <layout>Creditos.xml</layout>
+        </layout-folder>
+        <layout>Perguntas.xml</layout>
+    </layout-folder>
+    <event-folder expanded="1">
+        <event-folder expanded="1" name="Animacoes">
+            <event-sheet>MenuInicial.xml</event-sheet>
+            <event-sheet>Introducao.xml</event-sheet>
+            <event-sheet>Finalizacao.xml</event-sheet>
+            <event-sheet>Creditos.xml</event-sheet>
+        </event-folder>
+        <event-sheet>Perguntas.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" />
+        <global-instance type="Mouse" />
+        <global-instance type="Audio">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder expanded="1" />
+    <music-folder expanded="1">
+        <file-folder expanded="0" name="Introducao">
+            <file name="blinking1.ogg" />
+            <file name="blinking2.ogg" />
+            <file name="SomIntro.ogg" />
+        </file-folder>
+        <file-folder expanded="0" name="Perguntas">
+            <file name="SndTesteFundo.m4a" />
+            <file name="SndTesteFundo.ogg" />
+        </file-folder>
+        <file name="creditos.m4a" />
+        <file name="creditos.ogg" />
+    </music-folder>
+    <files-folder expanded="1" />
+</c2project>
